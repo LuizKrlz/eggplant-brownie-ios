@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet var felicidadeTextField: UITextField!
     
     @IBAction func adicionar() {
-        let nome: String = nomeTextField.text
-        let felicidade: String = felicidadeTextField.text
+        let nome: String = "Costela"
+        let felicidade: String = "5"
         print("comi \(nome) e fiquei com felicidade: \(felicidade)")
     }
 }
