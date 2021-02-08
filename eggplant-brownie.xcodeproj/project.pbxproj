@@ -13,6 +13,9 @@
 		D13100A725C398EA00A0532A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13100A525C398EA00A0532A /* Main.storyboard */; };
 		D13100A925C398ED00A0532A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13100A825C398ED00A0532A /* Assets.xcassets */; };
 		D13100AC25C398ED00A0532A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13100AA25C398ED00A0532A /* LaunchScreen.storyboard */; };
+		D137F1AF25D14D7C0052720E /* RefeicoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137F1AE25D14D7C0052720E /* RefeicoesTableViewController.swift */; };
+		D1F2357825CD581800017C24 /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F2357725CD581800017C24 /* Refeicao.swift */; };
+		D1F2357C25CD586600017C24 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F2357B25CD586600017C24 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		D13100A825C398ED00A0532A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D13100AB25C398ED00A0532A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D13100AD25C398ED00A0532A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D137F1AE25D14D7C0052720E /* RefeicoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicoesTableViewController.swift; sourceTree = "<group>"; };
+		D1F2357725CD581800017C24 /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
+		D1F2357B25CD586600017C24 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,16 +63,43 @@
 		D131009E25C398EA00A0532A /* eggplant-brownie */ = {
 			isa = PBXGroup;
 			children = (
-				D113AFE725CC04E8001289A2 /* MyPlayground.playground */,
 				D131009F25C398EA00A0532A /* AppDelegate.swift */,
+				D1F2358025CD591200017C24 /* Views */,
+				D1F2357E25CD58DF00017C24 /* Models */,
+				D1F2357F25CD58F900017C24 /* Controllers */,
+				D113AFE725CC04E8001289A2 /* MyPlayground.playground */,
 				D13100A125C398EA00A0532A /* SceneDelegate.swift */,
-				D13100A325C398EA00A0532A /* ViewController.swift */,
-				D13100A525C398EA00A0532A /* Main.storyboard */,
 				D13100A825C398ED00A0532A /* Assets.xcassets */,
 				D13100AA25C398ED00A0532A /* LaunchScreen.storyboard */,
 				D13100AD25C398ED00A0532A /* Info.plist */,
 			);
 			path = "eggplant-brownie";
+			sourceTree = "<group>";
+		};
+		D1F2357E25CD58DF00017C24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D1F2357725CD581800017C24 /* Refeicao.swift */,
+				D1F2357B25CD586600017C24 /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D1F2357F25CD58F900017C24 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D13100A325C398EA00A0532A /* ViewController.swift */,
+				D137F1AE25D14D7C0052720E /* RefeicoesTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D1F2358025CD591200017C24 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D13100A525C398EA00A0532A /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1F2357C25CD586600017C24 /* Item.swift in Sources */,
 				D13100A425C398EA00A0532A /* ViewController.swift in Sources */,
 				D13100A025C398EA00A0532A /* AppDelegate.swift in Sources */,
+				D137F1AF25D14D7C0052720E /* RefeicoesTableViewController.swift in Sources */,
 				D13100A225C398EA00A0532A /* SceneDelegate.swift in Sources */,
+				D1F2357825CD581800017C24 /* Refeicao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
