@@ -14,6 +14,8 @@
 		D13100A925C398ED00A0532A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13100A825C398ED00A0532A /* Assets.xcassets */; };
 		D13100AC25C398ED00A0532A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13100AA25C398ED00A0532A /* LaunchScreen.storyboard */; };
 		D137F1AF25D14D7C0052720E /* RefeicoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137F1AE25D14D7C0052720E /* RefeicoesTableViewController.swift */; };
+		D158FD6925D3F1D90061AB75 /* AdicionarItensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D158FD6725D3F1D90061AB75 /* AdicionarItensViewController.swift */; };
+		D158FD6A25D3F1D90061AB75 /* AdicionarItensViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D158FD6825D3F1D90061AB75 /* AdicionarItensViewController.xib */; };
 		D1F2357825CD581800017C24 /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F2357725CD581800017C24 /* Refeicao.swift */; };
 		D1F2357C25CD586600017C24 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F2357B25CD586600017C24 /* Item.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +31,8 @@
 		D13100AB25C398ED00A0532A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D13100AD25C398ED00A0532A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D137F1AE25D14D7C0052720E /* RefeicoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicoesTableViewController.swift; sourceTree = "<group>"; };
+		D158FD6725D3F1D90061AB75 /* AdicionarItensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarItensViewController.swift; sourceTree = "<group>"; };
+		D158FD6825D3F1D90061AB75 /* AdicionarItensViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdicionarItensViewController.xib; sourceTree = "<group>"; };
 		D1F2357725CD581800017C24 /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
 		D1F2357B25CD586600017C24 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +92,7 @@
 		D1F2357F25CD58F900017C24 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D158FD6725D3F1D90061AB75 /* AdicionarItensViewController.swift */,
 				D13100A325C398EA00A0532A /* ViewController.swift */,
 				D137F1AE25D14D7C0052720E /* RefeicoesTableViewController.swift */,
 			);
@@ -98,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				D13100A525C398EA00A0532A /* Main.storyboard */,
+				D158FD6825D3F1D90061AB75 /* AdicionarItensViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 			files = (
 				D13100AC25C398ED00A0532A /* LaunchScreen.storyboard in Resources */,
 				D13100A925C398ED00A0532A /* Assets.xcassets in Resources */,
+				D158FD6A25D3F1D90061AB75 /* AdicionarItensViewController.xib in Resources */,
 				D13100A725C398EA00A0532A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +181,7 @@
 			files = (
 				D1F2357C25CD586600017C24 /* Item.swift in Sources */,
 				D13100A425C398EA00A0532A /* ViewController.swift in Sources */,
+				D158FD6925D3F1D90061AB75 /* AdicionarItensViewController.swift in Sources */,
 				D13100A025C398EA00A0532A /* AppDelegate.swift in Sources */,
 				D137F1AF25D14D7C0052720E /* RefeicoesTableViewController.swift in Sources */,
 				D13100A225C398EA00A0532A /* SceneDelegate.swift in Sources */,

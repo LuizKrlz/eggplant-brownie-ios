@@ -124,6 +124,7 @@
                     <navigationItem key="navigationItem" id="mrF-4e-Q5Q"/>
                     <connections>
                         <outlet property="felicidadeTextField" destination="FgM-Hz-sME" id="MjG-0N-Q23"/>
+                        <outlet property="itensTableView" destination="smc-vV-hco" id="lZH-nR-COc"/>
                         <outlet property="nomeTextField" destination="EtN-Pa-odM" id="drh-eZ-XHf"/>
                     </connections>
                 </viewController>
