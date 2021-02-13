@@ -27,4 +27,19 @@ class Refeicao: NSObject {
         
         return total
     }
+    
+    
+    /// Detalhes
+    /// - Returns: Create a message with detalils
+    func detalhes() -> String {
+        // alerta padrao do ios
+        var mensagem = "Felicidade: \(self.felicidade)"
+        
+        for item in self.itens {
+            mensagem += ", \(item.nome) - calorias: \(item.calorias)"
+        }
+        
+        return mensagem
+    }
 }
+
