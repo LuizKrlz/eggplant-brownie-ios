@@ -19,14 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: - Atributos
     var delegate: AdicionaRefeicaoDelegate?
-    var itens: [Item] = [
-        Item(nome: "Molho de tomate", calorias: 40.0),
-        Item(nome: "Queijo", calorias: 60.0),
-        Item(nome: "Molho de Pimenta", calorias: 10.0),
-        Item(nome: "Massa", calorias: 40.0),
-        Item(nome: "Orégano", calorias: 2.0),
-        Item(nome: "Cebola", calorias: 5.0),
-    ]
+    var itens: [Item] = []
     
     var itensSelecionados: [Item] = []
     
@@ -38,8 +31,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - View Life cycle
     override func viewDidLoad() {
         let btnAdicionaItem = UIBarButtonItem(title: "adicionar", style: .plain, target: self, action: #selector( adicionarItem))
-        
         navigationItem.rightBarButtonItem = btnAdicionaItem
+        itens = ItemDAO().recupera()
     }
     
     @objc func adicionarItem() {
@@ -49,7 +42,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func add(_ item: Item) {
         itens.append(item)
-        itensTableView.reloadData()
+        ItemDAO().save(itens)
+        if let tableView = itensTableView {
+            tableView.reloadData()
+        } else {
+            let alerta = Alerta(controller: self)
+            alerta.exibe(title: "Desculpe", mensagem: "Não foi possível foi atualizar a tabela")
+        }
     }
     
     // MARK: - UITableViewDataSource
@@ -84,23 +83,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    // MARK: - IBActions
-    @IBAction func adicionar() {
-                
+    func recuperaRefeicaoDoFormulario() -> Refeicao? {
         guard let nomeDaRefeicao = nomeTextField?.text else {
-            return
+            return nil
         }
         
         guard let felicidadeDaRefeicao = felicidadeTextField?.text, let felicidade = Int(felicidadeDaRefeicao) else {
-            return
+            return nil
         }
         
         let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade, itens: itensSelecionados)
         refeicao.itens = itensSelecionados
         
-        // remove screen stack
-        delegate?.add(refeicao)
-        navigationController?.popViewController(animated: true)
+        return refeicao
+    }
+    
+    // MARK: - IBActions
+    @IBAction func adicionar() {
+        if let refeicao = recuperaRefeicaoDoFormulario() {
+            // remove screen stack
+            delegate?.add(refeicao)
+            navigationController?.popViewController(animated: true)
+        } else {
+            Alerta(controller: self).exibe(mensagem: "Erro ao criar uma refeição")
+        }
+        
+        
     }
 }
 

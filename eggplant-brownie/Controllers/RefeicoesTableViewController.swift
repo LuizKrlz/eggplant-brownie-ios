@@ -8,12 +8,16 @@
 import UIKit
 
 class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDelegate {
-    var refeicoes = [
-        Refeicao(nome: "Feijoada", felicidade: 4),
-        Refeicao(nome: "Churrasco", felicidade: 5),
-        Refeicao(nome: "Quacamole", felicidade: 3)
-    ]
+    // MARK: - Atributos
+    var refeicoes: [Refeicao] = []
     
+    // MARK: - ViewDidLoad
+    
+    override func viewDidLoad() {
+        refeicoes = RefeicaoDAO().recupera()
+    }
+    
+    // MARK: - TableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return refeicoes.count
     }
@@ -30,25 +34,24 @@ class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDeleg
         return cell
     }
     
+    // MARK: - Metodos
+    
     func add(_ refeicao: Refeicao) {
         refeicoes.append(refeicao)
         tableView.reloadData()
+        RefeicaoDAO().save(refeicoes)
     }
     
     @objc func mostrarDetalhes(_ gesture: UILongPressGestureRecognizer) {
         if gesture.state == .began {
             let celula = gesture.view as! UITableViewCell
             guard let indexPath = tableView.indexPath(for: celula) else { return }
-            let refeicao = refeicoes[indexPath.row]
+            let refeicao = refeicoes[indexPath.row] 
             
-            
-            refeicao.detalhes()
-            
-            let alerta = UIAlertController(title: refeicao.nome, message: refeicao.detalhes(), preferredStyle: .alert)
-            let btnCancelar = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alerta.addAction(btnCancelar)
-            
-            present(alerta, animated: true, completion: nil)
+            RemoveRefeicaoViewController(controller: self).exibe(refeicao, handler: { alerta in
+                self.refeicoes.remove(at: indexPath.row)
+                self.tableView.reloadData()
+            })
         }
     }
     
